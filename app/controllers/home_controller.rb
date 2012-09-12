@@ -1,6 +1,5 @@
-class HomeController < ActionController::ApplicationController
-  protect_from_forgery
-  
+class HomeController < ApplicationController
+
   def index
   end
   
