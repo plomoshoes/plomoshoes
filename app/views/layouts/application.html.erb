@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Plomoshoes</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PlomoShoes</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<%= yield %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-</body>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="<%=image_path('ico/favicon.png')%>">
+  </head>
+  <body>
+    <div id="main" class="container">
+      <header id="header">
+        <div id="plomoshoes-logo">
+          <%= link_to image_tag('plomoshoes-logo.png', :alt => 'PlomoShoes Logo', :width => 115, :height => 34), 'javascript:void(0)' %>
+        </div>
+        <nav id="main-nav">
+          <ul>
+            <li><%= link_to 'HOME', 'javascript:void(0)' %></li>
+            <li><%= link_to 'ABOUT', 'javascript:void(0)' %></li>
+            <li><%= link_to 'FALL 2012', 'javascript:void(0)' %></li>
+            <li><%= link_to 'PRESS', 'javascript:void(0)' %></li>
+            <li><%= link_to 'LOOKBOOK', 'javascript:void(0)' %></li>
+          </ul>
+        </nav>
+      </header>
+      <%= yield %>
+    </div>
+    
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
