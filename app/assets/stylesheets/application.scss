@@ -77,3 +77,21 @@ a:hover {
 	text-align: center;
 	color: #999;
 }
+
+/* = banner
+----------------------------------------------------------------------------------------------------*/
+.banner-carousel {
+	border: 1px solid #DDD;
+}
+
+/* = boxes
+----------------------------------------------------------------------------------------------------*/
+.boxes {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.boxes div {
+	height: 160px;
+	background-color: #DDD;
+}
