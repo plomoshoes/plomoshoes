@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag params[:controller], :media => "all" %>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,7 +23,7 @@
         </div>
         <nav id="main-nav">
           <ul>
-            <li><%= link_to 'HOME', 'javascript:void(0)' %></li>
+            <li class="selected"><%= link_to 'HOME', 'javascript:void(0)' %></li>
             <li><%= link_to 'ABOUT', 'javascript:void(0)' %></li>
             <li><%= link_to 'FALL 2012', 'javascript:void(0)' %></li>
             <li><%= link_to 'PRESS', 'javascript:void(0)' %></li>
@@ -31,6 +32,9 @@
         </nav>
       </header>
       <%= yield %>
+      <footer id="footer">
+        @2012
+      </footer>
     </div>
     
     <%= javascript_include_tag "application" %>

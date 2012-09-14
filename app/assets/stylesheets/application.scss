@@ -8,7 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require bootstrap
+ *= require_tree ./patterns
  *= require_self
  */
 
@@ -38,8 +39,7 @@ a:hover {
 /* = header
 ----------------------------------------------------------------------------------------------------*/
 #header {
-	border-bottom: 1px solid #333;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 #plomoshoes-logo {
@@ -64,4 +64,16 @@ a:hover {
 
 #main-nav ul li:first-child {
 	margin-left: 0;
+}
+
+#main-nav ul li.selected {
+	font-weight: bold;
+}
+
+/* = footer
+----------------------------------------------------------------------------------------------------*/
+#footer {
+	margin: 40px 0;
+	text-align: center;
+	color: #999;
 }

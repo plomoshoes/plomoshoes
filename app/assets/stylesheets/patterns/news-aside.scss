@@ -1,0 +1,34 @@
+.news-aside h1 {
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+	font-size: 14px;
+	line-height: 2em;
+	text-align: center;
+	margin: 0 0 10px;
+}
+
+.news-aside article {
+	margin: 0 10px;
+	border-bottom: 2px solid #333;
+	text-align: center;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+.news-aside article time {
+	font-size: 32px;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+
+.news-aside article h2 {
+	font-size: 14px;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+
+.news-aside .view-all {
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+}
