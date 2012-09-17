@@ -1,0 +1,8 @@
+.collection div {
+	height: 180px;
+	margin-top: 10px;
+}
+
+.collection div:nth-child(5) {
+	margin-left: 0;
+}

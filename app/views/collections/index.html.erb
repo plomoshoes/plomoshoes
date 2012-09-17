@@ -1,0 +1,8 @@
+<div class="row-fluid collection">
+  <% @shoes.each_with_index do |shoe, index| %>
+    <div class="span3">
+      <p><strong><%= shoe.name %></strong></p>
+      <%= simple_format shoe.detail %>
+    </div>
+  <% end %>
+</div>

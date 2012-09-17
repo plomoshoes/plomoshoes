@@ -2,7 +2,12 @@ Plomoshoes::Application.routes.draw do
   
   root :to => 'home#index'
   
+  # rails_admin
+  devise_for :admins, :path => 'administration'
+  mount RailsAdmin::Engine => '/administration', :as => 'rails_admin'
+
   get 'about' => 'about#index', :as => 'about'
+  get 'collections' => 'collections#index', :as => 'collections'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

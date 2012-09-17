@@ -6,7 +6,7 @@
     <% if content_for?(:head) %>
       <%= yield(:head) %>
     <% else %>
-      <title>PlomoShoes</title>
+      <title>Plomo Shoes</title>
     <% end %>
     <%= csrf_meta_tags %>
 
@@ -28,7 +28,7 @@
           <ul>
             <%= content_tag :li, link_to('HOME', root_url), :class => selected_menu_class('home') %>
             <%= content_tag :li, link_to('ABOUT', about_url), :class => selected_menu_class('about') %>
-            <li><%= link_to 'FALL 2012', 'javascript:void(0)' %></li>
+            <%= content_tag :li, link_to('FALL 2012', collections_url), :class => selected_menu_class('collections') %>
             <li><%= link_to 'PRESS', 'javascript:void(0)' %></li>
             <li><%= link_to 'LOOKBOOK', 'javascript:void(0)' %></li>
           </ul>
