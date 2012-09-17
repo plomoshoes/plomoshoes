@@ -1,0 +1,18 @@
+body {
+	border-top: 15px solid #333;
+	background-color: #EFEFEF;
+}
+
+a {
+  color: #787878;
+}
+
+a:hover {
+  color: #AAA;
+}
+
+#main {
+	background-color: #FFF;
+	padding: 40px 20px 0;
+	@include border-bottom-radius(4px);
+}

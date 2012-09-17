@@ -1,87 +1,10 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require bootstrap
- *= require_tree ./patterns
- *= require_self
- */
-
 @import "compass/css3";
 
-/* = default
-----------------------------------------------------------------------------------------------------*/
-body {
-	border-top: 15px solid #333;
-	background-color: #EFEFEF;
-}
+@import "bootstrap";
+@import "base/default";
 
-a {
-  color: #787878;
-}
+@import "layout/header";
+@import "layout/main_nav";
+@import "layout/footer";
 
-a:hover {
-  color: #AAA;
-}
-
-#main {
-	background-color: #FFF;
-	padding: 40px 20px 0;
-	@include border-bottom-radius(4px);
-}
-
-/* = header
-----------------------------------------------------------------------------------------------------*/
-#header {
-	margin-bottom: 10px;
-}
-
-#plomoshoes-logo {
-	margin-bottom: 15px;
-}
-
-#main-nav {
-	padding: 5px 0;
-	border-top: 1px solid #333;
-	@include inline-block;
-}
-
-#main-nav ul {
-	margin: 0;
-	list-style: none;
-}
-
-#main-nav ul li {
-	margin-left: 20px;
-	@include inline-block;
-}
-
-#main-nav ul li:first-child {
-	margin-left: 0;
-}
-
-#main-nav ul li.selected {
-	font-weight: bold;
-}
-
-/* = footer
-----------------------------------------------------------------------------------------------------*/
-#footer {
-	margin: 20px 0;
-	text-align: center;
-	color: #999;
-}
-
-#footer .links {
-	margin-bottom: 10px;
-}
-
-#footer .links a {
-	margin: 0 10px;
-}
+@import "patterns/*";

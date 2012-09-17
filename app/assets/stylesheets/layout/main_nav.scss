@@ -1,0 +1,23 @@
+#main-nav {
+	padding: 5px 0;
+	border-top: 1px solid #333;
+	@include inline-block;
+}
+
+#main-nav ul {
+	margin: 0;
+	list-style: none;
+}
+
+#main-nav ul li {
+	margin-left: 20px;
+	@include inline-block;
+}
+
+#main-nav ul li:first-child {
+	margin-left: 0;
+}
+
+#main-nav ul li.selected {
+	font-weight: bold;
+}
