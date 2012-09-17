@@ -1,0 +1,20 @@
+<% content_for :content do %>
+  <div class="row-fluid">
+    <div class="span10">
+      <%= yield %>
+    </div>
+    <div class="span2">
+      <aside class="news-aside">
+        <h1>NEWS</h1>
+        <% 4.times do %>
+          <article>
+            <time><%= link_to '09/11', 'javascript:void(0)' %></time>
+            <h2><%= link_to 'NEW Nº01', 'javascript:void(0)' %></h2>
+          </article>
+        <% end %>
+        <%= link_to 'VIEW ALL NEWS', 'javascript:void(0)', :class => 'view-all' %>
+      </aside>
+    </div>
+  </div>
+<% end %>
+<%= render :template => 'layouts/application' %>

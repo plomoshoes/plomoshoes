@@ -73,25 +73,15 @@ a:hover {
 /* = footer
 ----------------------------------------------------------------------------------------------------*/
 #footer {
-	margin: 40px 0;
+	margin: 20px 0;
 	text-align: center;
 	color: #999;
 }
 
-/* = banner
-----------------------------------------------------------------------------------------------------*/
-.banner-carousel {
-	border: 1px solid #DDD;
+#footer .links {
+	margin-bottom: 10px;
 }
 
-/* = boxes
-----------------------------------------------------------------------------------------------------*/
-.boxes {
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-.boxes div {
-	height: 160px;
-	background-color: #DDD;
+#footer .links a {
+	margin: 0 10px;
 }

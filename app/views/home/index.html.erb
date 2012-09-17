@@ -1,22 +1,13 @@
-<div class="row-fluid">
-  <div class="span10">
-    <%= image_tag 'banner-01.gif', :width => 780, :height => 295, :alt => 'Fashion', :class => 'banner-carousel' %>
-    <div class="row-fluid boxes">
-      <div class="span4"></div>
-      <div class="span4"></div>
-      <div class="span4"></div>
-    </div>
+<div id="mainCarousel" class="carousel slide" data-interval="4000">
+  <div class="carousel-inner">
+    <div class="active item"><%= image_tag 'banner-01.png', :width => 780, :height => 295, :alt => 'Fashion', :class => 'banner-carousel' %></div>
+    <div class="item"><%= image_tag 'banner-02.png', :width => 780, :height => 295, :alt => 'Shop online', :class => 'banner-carousel' %></div>
   </div>
-  <div class="span2">
-    <aside class="news-aside">
-      <h1>NEWS</h1>
-      <% 4.times do %>
-        <article>
-          <time>09/11</time>
-          <h2>NEW Nº01</h2>
-        </article>
-      <% end %>
-      <%= link_to 'VIEW ALL NEWS', 'javascript:void(0)', :class => 'view-all' %>
-    </aside>
-  </div>
+  <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>
+</div>
+<div class="row-fluid boxes">
+  <div class="span4"></div>
+  <div class="span4"></div>
+  <div class="span4"></div>
 </div>

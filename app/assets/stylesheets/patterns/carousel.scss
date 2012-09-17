@@ -1,0 +1,15 @@
+@import "compass/css3";
+
+.banner-carousel {
+	border: 1px solid #DDD;
+}
+
+.carousel-control {
+	@include transition-property(opacity);
+	@include transition-duration(0.15s);
+	@include opacity(0);
+}
+
+.carousel:hover .carousel-control {
+	@include opaque;
+}

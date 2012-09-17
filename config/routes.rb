@@ -2,6 +2,8 @@ Plomoshoes::Application.routes.draw do
   
   root :to => 'home#index'
   
+  get 'about' => 'about#index', :as => 'about'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
