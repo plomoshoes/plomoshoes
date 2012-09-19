@@ -34,7 +34,13 @@
           </ul>
         </nav>
       </header>
-      <%= content_for?(:content) ? yield(:content) : yield %>
+      <% if notice || alert %>
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+      <% end %>
+      <div class="clearfix">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </div>
       <footer id="footer">
         <div class="links">
           <%= link_to 'Twitter', 'javascript:void(0)' %>
@@ -44,7 +50,11 @@
         @2012
       </footer>
     </div>
-    
+    <div class="modal hide fade" id="modal">
+      <div class="modal-body">
+        <p data-dismiss="modal">Shoe details...</p>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
     <%= yield(:javascript) if content_for?(:javascript) %>
   </body>

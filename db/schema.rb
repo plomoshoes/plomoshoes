@@ -45,10 +45,14 @@ ActiveRecord::Schema.define(:version => 20120917041631) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "shoes", :force => true do |t|
-    t.string   "name"
+    t.string   "name",               :null => false
     t.text     "detail"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end

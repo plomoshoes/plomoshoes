@@ -1,7 +1,7 @@
-<div id="mainCarousel" class="carousel slide" data-interval="4000">
+<div id="mainCarousel" class="carousel">
   <div class="carousel-inner">
-    <div class="active item"><%= image_tag 'banner-01.png', :width => 780, :height => 295, :alt => 'Fashion', :class => 'banner-carousel' %></div>
-    <div class="item"><%= image_tag 'banner-02.png', :width => 780, :height => 295, :alt => 'Shop online', :class => 'banner-carousel' %></div>
+    <div class="active item"><%= image_tag 'banner-01.png', :width => 778, :height => 295, :alt => 'Fashion', :class => 'banner-carousel' %></div>
+    <div class="item"><%= image_tag 'banner-02.png', :width => 778, :height => 295, :alt => 'Shop online', :class => 'banner-carousel' %></div>
   </div>
   <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>
@@ -11,3 +11,12 @@
   <div class="span4"></div>
   <div class="span4"></div>
 </div>
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    $(function() {
+      $('.carousel').carousel({
+        interval: 4000
+      });
+    })
+  <% end %>
+<% end %>

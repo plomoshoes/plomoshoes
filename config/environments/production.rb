@@ -68,3 +68,16 @@ Plomoshoes::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
+
+Paperclip::Attachment.default_options.merge!({
+  :storage => :s3,
+  :s3_protocol => 'http',
+  :s3_host_name => "s3-sa-east-1.amazonaws.com",
+  :bucket => "plomoshoes",
+  :s3_headers => {'Expires' => 1.year.from_now.httpdate},
+  :s3_credentials => {
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  },
+  :path => "/:rails_env/:class/:attachment/:id/:style/:filename"
+})

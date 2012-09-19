@@ -1,8 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+
+# Authetication
 gem 'devise'
 gem 'rails_admin'
+
+# Paperclip
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk', '~> 1.3.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

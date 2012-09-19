@@ -1,8 +1,46 @@
-.collection div {
-	height: 180px;
-	margin-top: 10px;
+.collection .item {
+	position: relative;
+	float: left;
 }
 
-.collection div:nth-child(5) {
-	margin-left: 0;
+.collection .item img {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.collection .item:nth-child(4n+1) img {
+	border-left: 1px solid #000;
+}
+
+.collection .item:nth-child(1) img,
+.collection .item:nth-child(2) img,
+.collection .item:nth-child(3) img,
+.collection .item:nth-child(4) img {
+	border-top: 1px solid #000;
+}
+
+.collection .popover {
+	@include transition-property(opacity);
+	@include transition-duration(0.15s);
+	@include opacity(0);
+	width: 190px;
+	height: 50px;
+	padding: 10px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.collection .item:hover .popover {
+	@include opaque;
+}
+
+.collection .item-name {
+	color: #FFF;
+	font-size: 18px;
+}
+
+.collection .item-link {
+	color: #CCC;
 }

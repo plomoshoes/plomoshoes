@@ -1,8 +1,12 @@
-<div class="row-fluid collection">
+<h1>COLLECTION FALL 2012</h1>
+<section class="collection">
   <% @shoes.each_with_index do |shoe, index| %>
-    <div class="span3">
-      <p><strong><%= shoe.name %></strong></p>
-      <%= simple_format shoe.detail %>
+    <div class="item">
+      <%= link_to image_tag(shoe.image.url, :width => 230, :height => 230, :alt => shoe.name), '#modal', :data => {:toggle => 'modal'} %>
+      <div class="popover">
+        <p class="item-name"><%= shoe.name %></p>
+        <%= link_to 'VIEW DETAILS', '#modal', :data => {:toggle => 'modal'}, :class => 'item-link' %>
+      </div>
     </div>
   <% end %>
-</div>
+</section>
