@@ -1,8 +1,12 @@
-.banner-carousel {
+.carousel {
+	margin-bottom: 15px;
+}
+
+.carousel .carousel-inner img {
 	border: 1px solid #DDD;
 }
 
-.carousel-control {
+.carousel .carousel-control {
 	@include transition-property(opacity);
 	@include transition-duration(0.15s);
 	@include opacity(0);

@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(:version => 20120917041631) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "collections", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.boolean  "current"
+    t.boolean  "active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -47,12 +56,17 @@ ActiveRecord::Schema.define(:version => 20120917041631) do
   create_table "shoes", :force => true do |t|
     t.string   "name",               :null => false
     t.text     "detail"
+    t.string   "path"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "active"
+    t.integer  "collection_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+
+  add_index "shoes", ["collection_id"], :name => "index_shoes_on_collection_id"
 
 end

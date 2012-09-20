@@ -15,8 +15,13 @@ gem 'aws-sdk', '~> 1.3.4'
 
 group :development, :test do
   gem 'sqlite3'
+  # Pretty printed test output
+  gem 'turn', '~> 0.8.3', :require => false
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'autotest-rails'
+  gem 'database_cleaner'
 end
 
 group :production do

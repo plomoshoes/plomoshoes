@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   
-  def index
-    @shoes = Shoe.all
+  def show
+    @collection = Collection.find_by_path! params[:path]
   end
   
 end

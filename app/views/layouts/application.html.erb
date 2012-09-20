@@ -26,9 +26,9 @@
         </div>
         <nav id="main-nav">
           <ul>
-            <%= content_tag :li, link_to('HOME', root_url), :class => selected_menu_class('home') %>
-            <%= content_tag :li, link_to('ABOUT', about_url), :class => selected_menu_class('about') %>
-            <%= content_tag :li, link_to('FALL 2012', collections_url), :class => selected_menu_class('collections') %>
+            <%= content_tag :li, link_to('HOME', root_url), :class => selected_menu_class(['home']) %>
+            <%= content_tag :li, link_to('ABOUT', about_url), :class => selected_menu_class(['about']) %>
+            <%= content_tag :li, link_to(current_collection.name, collection_url(current_collection.path)), :class => selected_menu_class(['collections', 'shoes']) unless current_collection.nil? %>
             <li><%= link_to 'PRESS', 'javascript:void(0)' %></li>
             <li><%= link_to 'LOOKBOOK', 'javascript:void(0)' %></li>
           </ul>
@@ -49,11 +49,6 @@
         </div>
         @2012
       </footer>
-    </div>
-    <div class="modal hide fade" id="modal">
-      <div class="modal-body">
-        <p data-dismiss="modal">Shoe details...</p>
-      </div>
     </div>
     <%= javascript_include_tag "application" %>
     <%= yield(:javascript) if content_for?(:javascript) %>

@@ -7,7 +7,8 @@ Plomoshoes::Application.routes.draw do
   mount RailsAdmin::Engine => '/administration', :as => 'rails_admin'
 
   get 'about' => 'about#index', :as => 'about'
-  get 'collections' => 'collections#index', :as => 'collections'
+  get 'collections/:path' => 'collections#show', :as => 'collection'
+  get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

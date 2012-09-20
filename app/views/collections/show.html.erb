@@ -1,0 +1,12 @@
+<h1>COLLECTION <%= @collection.name %></h1>
+<section class="collection">
+  <% @collection.shoes.each_with_index do |shoe, index| %>
+    <div class="item">
+      <%= link_to image_tag(shoe.image.url(:medium), :width => 230, :height => 230, :alt => shoe.name), shoe_url(shoe.collection_path, shoe.path) %>
+      <div class="popover">
+        <p class="item-name"><%= shoe.name %></p>
+        <%= link_to 'VIEW DETAILS', shoe_url(shoe.collection_path, shoe.path), :class => 'item-link' %>
+      </div>
+    </div>
+  <% end %>
+</section>

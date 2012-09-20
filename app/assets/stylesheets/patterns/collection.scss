@@ -1,21 +1,19 @@
 .collection .item {
 	position: relative;
 	float: left;
-}
-
-.collection .item img {
 	border-right: 1px solid #000;
 	border-bottom: 1px solid #000;
+	height: 230px;
 }
 
-.collection .item:nth-child(4n+1) img {
+.collection .item:nth-child(4n+1) {
 	border-left: 1px solid #000;
 }
 
-.collection .item:nth-child(1) img,
-.collection .item:nth-child(2) img,
-.collection .item:nth-child(3) img,
-.collection .item:nth-child(4) img {
+.collection .item:nth-child(1),
+.collection .item:nth-child(2),
+.collection .item:nth-child(3),
+.collection .item:nth-child(4) {
 	border-top: 1px solid #000;
 }
 
@@ -43,4 +41,5 @@
 
 .collection .item-link {
 	color: #CCC;
+	font-size: 12px;
 }
