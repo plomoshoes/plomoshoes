@@ -1,14 +1,14 @@
 <p><%= link_to "< BACK TO COLLECTION", collection_url(@collection.path) %></p>
 <section class="row-fluid">
   <div class="span8 pull-left">
-    <%= link_to image_tag(@shoe.image.url(:large), :with => 620, :height => 620, :alt => "COLLECTION #{@collection.name} #{@shoe.name}"), @shoe.image.url(:large), :target => '_blank', :title => 'Click to view full size' %>
+    <%= link_to image_tag(@shoe.image.url(:large), :with => 620, :height => 620, :alt => "COLLECTION #{@collection.name} #{@shoe.name}"), @shoe.image.url, :target => '_blank', :title => 'Click to view full size' %>
   </div>
   <div class="span4">
     <h1><%= @shoe.name %></h1>
     <%= simple_format @shoe.detail %>
     <hr>
     <p>
-      <%= link_to 'VIEW FULL SIZE IMAGE', @shoe.image.url(:large), :target => '_blank' %>
+      <%= link_to 'VIEW FULL SIZE IMAGE', @shoe.image.url, :target => '_blank' %>
     </p>
   </div>
 </section>
