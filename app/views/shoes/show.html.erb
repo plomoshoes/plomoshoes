@@ -1,3 +1,14 @@
+<% content_for :head do %>
+  <% page_title = "#{@shoe.name} - Collection #{@collection.name} | Plomo Shoes" %>
+  <% page_description = @shoe.detail %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="<%= @shoe.name.downcase %>, <%= "#{@shoe.name.downcase} collection #{@collection.name.downcase}" %>">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= @shoe.image.url(:medium) %>">
+  <meta property="og:url" content="<%= shoe_url(@collection.path, @shoe.path) %>">
+<% end %>
 <p><%= link_to "< BACK TO COLLECTION", collection_url(@collection.path) %></p>
 <section class="row-fluid">
   <div class="span8 pull-left">

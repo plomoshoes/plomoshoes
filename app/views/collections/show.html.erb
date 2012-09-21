@@ -1,12 +1,23 @@
+<% content_for :head do %>
+  <% page_title = "Collection #{@collection.name} | Plomo Shoes" %>
+	<% page_description = "Check out the shoe collection of #{@collection.name}." %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="collection <%= @collection.name.downcase %>">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= asset_path('plomoshoes-logo.png') %>">
+  <meta property="og:url" content="<%= collection_url(@collection.path) %>">
+<% end %>
 <h1>COLLECTION <%= @collection.name %></h1>
-<section class="collection">
+<div class="collection">
   <% @collection.shoes.each_with_index do |shoe, index| %>
-    <div class="item">
+    <section class="item">
       <%= link_to image_tag(shoe.image.url(:medium), :width => 230, :height => 230, :alt => shoe.name), shoe_url(shoe.collection_path, shoe.path) %>
       <div class="popover">
-        <p class="item-name"><%= shoe.name %></p>
+        <h1 class="item-name"><%= shoe.name %></h1>
         <%= link_to 'VIEW DETAILS', shoe_url(shoe.collection_path, shoe.path), :class => 'item-link' %>
       </div>
-    </div>
+    </section>
   <% end %>
-</section>
+</div>

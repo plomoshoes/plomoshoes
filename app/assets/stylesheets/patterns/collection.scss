@@ -27,7 +27,9 @@
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
+	background: #666;
 	background: rgba(0, 0, 0, 0.5);
+	@include border-radius(4px);
 }
 
 .collection .item:hover .popover {
@@ -37,6 +39,9 @@
 .collection .item-name {
 	color: #FFF;
 	font-size: 18px;
+	line-height: 1.4em;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .collection .item-link {

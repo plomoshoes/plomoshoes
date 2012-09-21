@@ -21,9 +21,9 @@
   <body>
     <div id="main" class="container">
       <header id="header">
-        <div id="plomoshoes-logo">
-          <%= link_to image_tag('plomoshoes-logo.png', :alt => 'PlomoShoes Logo', :width => 115, :height => 34), 'javascript:void(0)' %>
-        </div>
+        <%= content_tag (params[:controller] == 'home' ? 'h1' : 'div'), :id => 'plomoshoes-logo' do %>
+          <%= link_to image_tag('plomoshoes-logo.png', :alt => 'Plomo Shoes Logo', :width => 115, :height => 34), 'javascript:void(0)' %>
+        <% end %>
         <nav id="main-nav">
           <ul>
             <%= content_tag :li, link_to('HOME', root_url), :class => selected_menu_class(['home']) %>

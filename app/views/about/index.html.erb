@@ -1,9 +1,20 @@
 <% content_for :head do %>
+  <% page_title = "About | Plomo Shoes" %>
+	<% page_description = "What first drew Galia and Keltse to one another is familiar to most women: an undeniable, uncontrollable love for shoes." %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="about plomoshoes, galia plomoshoes, keltse plomoshoes">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= asset_path('plomoshoes-logo.png') %>">
+  <meta property="og:url" content="<%= about_url %>">
+<% end %>
+<% content_for :head do %>
   <title>About | Plomo Shoes</title>
 <% end %>
 <div class="row-fluid about-text">
   <div class="span3">
-    <h1>A TALE OF<br>TWO<br>SHOES<br>LOVERS</h1>
+    <h1>ABOUT A TALE OF<br>TWO<br>SHOES<br>LOVERS</h1>
   </div>
   <div class="span5">
     <p>What first drew Galia and Keltse to one another is familiar to most women: an undeniable, uncontrollable love for shoes. The two first met on the set of a TV fashion show in 2007 and, since then, they’ve been inseparable.</p>

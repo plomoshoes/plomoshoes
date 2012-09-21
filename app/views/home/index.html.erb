@@ -1,4 +1,15 @@
-<div id="mainCarousel" class="carousel">
+<% content_for :head do %>
+  <% page_title = "Plomo Shoes" %>
+  <% page_description = "Shoe collections that continue to take inspiration from quotidian, magnificent, even downright bizarre places, finding the beauty (and the shoe) in all of them." %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="contemporary shoe,platform,wedge,pale colors,patent leather,cork,leather shoe, animal print, snake leather, oxfords, penny loafer, mary jane, baby blue shoe, fringes boot, flat bootie, flat platform, peach shoe, oxfrod with tassel, ostrich leather">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= asset_path('plomoshoes-logo.png') %>">
+  <meta property="og:url" content="<%= root_url %>">
+<% end %>
+<section id="mainCarousel" class="carousel">
   <div class="carousel-inner">
     <div class="active item"><%= image_tag 'home/banner-carousel-01.png', :width => 778, :height => 295, :alt => 'Shop online' %></div>
     <div class="item"><%= image_tag 'home/banner-carousel-02.png', :width => 778, :height => 295, :alt => 'Fashion' %></div>
@@ -6,12 +17,12 @@
   </div>
   <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>
-</div>
-<div class="row-fluid">
+</section>
+<section class="row-fluid">
   <div class="span4"><%= image_tag 'home/banner-thumb-01.jpg', :width => 249, :height => 120 %></div>
   <div class="span4"><%= image_tag 'home/banner-thumb-02.jpg', :width => 249, :height => 120 %></div>
   <div class="span4"><%= image_tag 'home/banner-thumb-03.jpg', :width => 249, :height => 120 %></div>
-</div>
+</section>
 <% content_for :javascript do %>
   <%= javascript_tag do %>
     $(function() {
