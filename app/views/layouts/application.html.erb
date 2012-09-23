@@ -21,6 +21,7 @@
   <body>
     <div id="main" class="container">
       <header id="header">
+        <%= image_tag 'plomoshoes-aside-icon.png', :width => 36, :height => 36, :alt => 'Plomo Shoes Icon', :class => 'plomoshoes-aside-icon' %>
         <%= content_tag (params[:controller] == 'home' ? 'h1' : 'div'), :id => 'plomoshoes-logo' do %>
           <%= link_to image_tag('plomoshoes-logo.png', :alt => 'Plomo Shoes Logo', :width => 115, :height => 34), 'javascript:void(0)' %>
         <% end %>
@@ -42,12 +43,23 @@
         <%= content_for?(:content) ? yield(:content) : yield %>
       </div>
       <footer id="footer">
-        <div class="links">
-          <%= link_to 'Twitter', 'javascript:void(0)' %>
-          <%= link_to 'Facebook', 'javascript:void(0)' %>
-          <%= link_to 'Contact', 'javascript:void(0)' %>
+        <div class="clearfix">
+          <div class="pull-left">
+            <%= link_to 'SITE LOCATOR', 'javascript:void(0)' %>
+            <%= link_to 'BLOG', 'javascript:void(0)' %>
+          </div>
+          <div class="pull-right">
+            <%= link_to 'TWITTER', 'javascript:void(0)' %>
+            <%= link_to 'FACEBOOK', 'javascript:void(0)' %>
+            <%= link_to 'CONTACT', 'javascript:void(0)' %>
+            <%= form_tag '/' do %>
+              JOIN EMAIL LIST
+              <input type="text" name="email" placeholder="ENTER YOUR EMAIL">
+              <input type="image" src="<%= image_path 'icons/newsletter.png' %>" title="Submit">
+            <% end %>
+          </div>
         </div>
-        @2012
+        <div class="copyright">@2012 Plomo Shoes.</div>
       </footer>
     </div>
     <%= javascript_include_tag "application" %>

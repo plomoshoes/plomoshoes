@@ -9,6 +9,7 @@ Plomoshoes::Application.routes.draw do
   get 'about' => 'about#index', :as => 'about'
   get 'collections/:path' => 'collections#show', :as => 'collection'
   get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'
+  get 'retailers' => 'retailers#index', :as => 'retailers'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

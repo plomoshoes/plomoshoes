@@ -1,13 +1,45 @@
 #footer {
-	margin: 40px 0;
+	margin: 40px 0 20px;
 	text-align: center;
-	color: #999;
+	padding-top: 10px;
+	border-top: 1px solid #EEE;
+	font-family: 'Times New Roman', Times;
 }
 
-#footer .links {
-	margin-bottom: 10px;
+#footer .pull-left {
+	float: left;
 }
 
-#footer .links a {
-	margin: 0 10px;
+#footer .pull-left a {
+	margin-right: 10px;
+}
+
+#footer .pull-right {
+	float: right;
+}
+
+#footer .pull-right a {
+	margin-left: 10px;
+}
+
+#footer form {
+	margin-left: 20px;
+	@include inline-block;
+	border-left: 1px solid #CCC;
+	padding-left: 10px;
+}
+
+#footer form input[type="text"] {
+	border: 1px solid #CCC;
+	@include border-radius(3px);
+  font-size: 12px;
+	line-height: 20px;
+	padding: 0 5px;
+	margin: 0 5px;
+	width: 150px;
+}
+
+#footer .copyright {
+	color: #BBB;
+	margin-top: 40px;
 }
