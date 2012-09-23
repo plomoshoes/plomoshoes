@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     begin
       if Rails.env.production?
         h = Hominid::API.new('a776eba7dc2b3d3e79685b36216ea5ba-us5')
-        h.list_subscribe('7b6f8f0343', email, {}, 'html', false, true, false, false)
+        h.list_subscribe('7b6f8f0343', params[:email], {}, 'html', false, true, false, false)
       end
       @feedback_text = 'Ready! You will be informed about all our news.'
     rescue Hominid::APIError => error
