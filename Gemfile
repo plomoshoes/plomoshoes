@@ -10,6 +10,9 @@ gem 'rails_admin'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '~> 1.3.4'
 
+# Mailchimp Gem
+gem 'hominid'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

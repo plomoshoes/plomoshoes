@@ -11,6 +11,9 @@ Plomoshoes::Application.routes.draw do
   get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'
   get 'retailers' => 'retailers#index', :as => 'retailers'
   
+  # subscribe
+  post 'subscribe' => 'home#subscribe', :as => :subscribe
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

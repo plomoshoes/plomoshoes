@@ -75,6 +75,7 @@ GEM
     fssm (0.2.9)
     haml (3.1.7)
     hike (1.2.1)
+    hominid (3.0.5)
     httparty (0.9.0)
       multi_json (~> 1.0)
       multi_xml
@@ -197,6 +198,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  hominid
   jquery-rails
   paperclip (~> 3.0)
   pg
