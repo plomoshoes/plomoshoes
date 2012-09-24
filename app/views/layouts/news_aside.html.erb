@@ -6,15 +6,33 @@
     <div class="span2">
       <aside class="news-aside">
         <h1>NEWS</h1>
-        <% 4.times do %>
+        <div id="newsAsideContent"></div>
+        <script id="newsAsideContentTemplate" type="text/x-jquery-tmpl">
           <article>
-            <time><%= link_to '09/11', 'javascript:void(0)' %></time>
-            <h2><%= link_to 'NEW Nº01', 'javascript:void(0)' %></h2>
+            <time datetime="${publishedDate}" pubdate><a href="${link}" target="_blank">${plomo.formatFeedDate(publishedDate)}</a></time>
+            <h2><a href="${link}" target="_blank">${title}</a></h2>
           </article>
-        <% end %>
+        </script>
         <%= link_to 'VIEW ALL NEWS', 'javascript:void(0)', :class => 'view-all' %>
       </aside>
     </div>
   </div>
+<% end %>
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    (function() {
+      window.plomo = {};
+      window.plomo.formatFeedDate = function(date) {
+        date = new Date(date);
+        return date.getDate() + '/' + date.getMonth();
+      };
+      
+      var feedUrl = 'http://plomoshoes.wordpress.com/feed/';
+      $.getJSON('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&num=5&q=' + feedUrl, function(data) {
+        var html = $('#newsAsideContentTemplate').tmpl(data.responseData.feed.entries);
+        $('#newsAsideContent').empty().html(html);
+      });      
+    })();
+  <% end %>
 <% end %>
 <%= render :template => 'layouts/application' %>
