@@ -28,7 +28,7 @@
       };
       
       var feedUrl = 'http://plomoshoes.wordpress.com/feed/';
-      $.getJSON('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&num=5&q=' + feedUrl, function(data) {
+      $.getJSON('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&num=4&q=' + feedUrl, function(data) {
         var html = $('#newsAsideContentTemplate').tmpl(data.responseData.feed.entries);
         $('#newsAsideContent').empty().html(html);
       });      
