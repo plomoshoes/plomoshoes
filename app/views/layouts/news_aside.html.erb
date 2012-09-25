@@ -13,7 +13,7 @@
             <h2><a href="${link}" target="_blank">${title}</a></h2>
           </article>
         </script>
-        <%= link_to 'VIEW ALL NEWS', 'javascript:void(0)', :class => 'view-all' %>
+        <%= link_to 'VIEW ALL NEWS', 'http://plomoshoes.wordpress.com', :target => '_blank', :class => 'view-all' %>
       </aside>
     </div>
   </div>
@@ -24,7 +24,7 @@
       window.plomo = {};
       window.plomo.formatFeedDate = function(date) {
         date = new Date(date);
-        return date.getDate() + '/' + date.getMonth();
+        return date.getDate() + '/' + (date.getMonth()+1);
       };
       
       var feedUrl = 'http://plomoshoes.wordpress.com/feed/';

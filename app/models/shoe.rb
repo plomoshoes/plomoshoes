@@ -6,7 +6,7 @@ class Shoe < ActiveRecord::Base
   before_validation { self.image.clear if self.delete_image == '1' }
   
   validates_presence_of :name
-  validates_attachment_size :image, :less_than => 1.megabyte, :message => "Imagem deve ser menor que 1 megabyte"
+  validates_attachment_size :image, :less_than => 2.megabyte, :message => "Imagem deve ser menor que 2 megabytes"
   validates_attachment_content_type :image,
     :content_type => ['image/pjpeg', 'image/jpg', 'image/jpeg', 'image/gif', 'image/png', 'image/x-png'],
                      :message => "Imagem dever ser jpeg, gif ou png"
