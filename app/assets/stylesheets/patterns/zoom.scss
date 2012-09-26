@@ -8,7 +8,7 @@
 }
 
 .zoom {
-	@include inline-block;
+	display: block;
 	position:relative;
 	border: 1px solid #EEE;
 	@include border-radius(2px);

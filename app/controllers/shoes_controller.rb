@@ -8,6 +8,10 @@ class ShoesController < ApplicationController
   def buy
     shoe = Shoe.find params[:id]
     Notifier.buy_notification(shoe, params[:email]).deliver
+    
+    if params[:newsletter]
+      subscribe
+    end
   end
   
 end

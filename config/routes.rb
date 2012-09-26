@@ -19,8 +19,8 @@ Plomoshoes::Application.routes.draw do
   # retailers
   get 'retailers' => 'retailers#index', :as => 'retailers'
   
-  # subscribe
-  post 'subscribe' => 'home#subscribe', :as => :subscribe
+  # subscribe newsletter
+  post 'subscribe' => 'application#subscribe', :as => :subscribe
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
