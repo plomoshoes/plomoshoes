@@ -4,7 +4,9 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Buy notification</h1>
+    <p>
+      <strong>Buy notification</strong>
+    </p>
     <p>
       Email <strong><%= @email %></strong>
     <p>
@@ -13,7 +15,7 @@
       Collection <%= @shoe.collection.name %>
     </p>
     <p>
-      <%= link_to 'Go to shoe', shoe_url(@shoe.collection_path, @shoe.path) %>
+      <%= shoe_url(@shoe.collection_path, @shoe.path) %>
     </p>
   </body>
 </html>
