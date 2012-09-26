@@ -60,8 +60,9 @@ Plomoshoes::Application.configure do
     :domain => 'www.plomoshoes.com',
     :user_name => 'corp@plomoshoes.com',
     :password => 'worlddomination',
-    :authentication => 'plain'
+    :authentication => :login
   }
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable threaded mode
   # config.threadsafe!
