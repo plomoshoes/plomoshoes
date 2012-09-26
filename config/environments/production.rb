@@ -57,11 +57,10 @@ Plomoshoes::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtpout.secureserver.net",
     :port => 80,
-    :domain => 'plomoshoes.com',
+    :domain => 'www.plomoshoes.com',
     :user_name => 'corp@plomoshoes.com',
     :password => 'worlddomination',
-    :authentication => 'plain',
-    :enable_starttls_auto => true
+    :authentication => 'plain'
   }
 
   # Enable threaded mode
