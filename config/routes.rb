@@ -6,9 +6,17 @@ Plomoshoes::Application.routes.draw do
   devise_for :admins, :path => 'administration'
   mount RailsAdmin::Engine => '/administration', :as => 'rails_admin'
 
+  # about
   get 'about' => 'about#index', :as => 'about'
+  
+  # collections
   get 'collections/:path' => 'collections#show', :as => 'collection'
+  
+  # shoes
   get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'
+  post 'shoes/:id/buy' => 'shoes#buy', :as => 'buy_shoe'
+  
+  # retailers
   get 'retailers' => 'retailers#index', :as => 'retailers'
   
   # subscribe

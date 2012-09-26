@@ -1,0 +1,13 @@
+.button {
+	color: #FFF;
+	font-size: 16px;
+	padding: 0.8em 1em;
+	line-height: 1.6em;
+	background-color: #333;
+	border: none;
+	@include border-radius(2px);
+}
+
+.small-button {
+	font-size: 0.8em;
+}

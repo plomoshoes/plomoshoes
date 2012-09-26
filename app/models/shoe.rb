@@ -1,7 +1,7 @@
 class Shoe < ActiveRecord::Base
   belongs_to :collection
   
-  attr_accessible :detail, :name, :path, :image, :delete_image, :active, :collection_id
+  attr_accessible :detail, :name, :path, :price, :image, :delete_image, :active, :collection_id
   attr_accessor :delete_image
   before_validation { self.image.clear if self.delete_image == '1' }
   

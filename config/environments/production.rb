@@ -53,6 +53,16 @@ Plomoshoes::Application.configure do
   
   # ActionMailer
   config.action_mailer.default_url_options = { :host => 'http://plomoshoes.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtpout.secureserver.net",
+    :port => 80,
+    :domain => 'plomoshoes.com',
+    :user_name => 'corp@plomoshoes.com',
+    :password => 'worlddomination',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  }
 
   # Enable threaded mode
   # config.threadsafe!

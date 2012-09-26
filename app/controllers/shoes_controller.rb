@@ -5,4 +5,9 @@ class ShoesController < ApplicationController
     @shoe = Shoe.find_by_path! params[:path]
   end
   
+  def buy
+    shoe = Shoe.find params[:id]
+    Notifier.buy_notification shoe, params[:email]
+  end
+  
 end

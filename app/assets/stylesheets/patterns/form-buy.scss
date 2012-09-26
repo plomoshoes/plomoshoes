@@ -1,0 +1,13 @@
+#form-buy {
+	padding: 40px;
+	@include border-radius(2px);
+	background-color: white;
+}
+
+#form-buy .email {
+	width: 200px;
+}
+
+#form-buy .button {
+	margin-left: 5px;
+}

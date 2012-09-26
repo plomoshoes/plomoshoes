@@ -12,14 +12,57 @@
 <p><%= link_to "< BACK TO COLLECTION", collection_url(@collection.path) %></p>
 <section class="row-fluid">
   <div class="span8 pull-left">
-    <%= link_to image_tag(@shoe.image.url(:large), :with => 620, :height => 620, :alt => "COLLECTION #{@collection.name} #{@shoe.name}"), @shoe.image.url, :target => '_blank', :title => 'Click to view full size' %>
+    <div id="shoeImage" class="zoom">
+      <span class="zoomIcon"></span>
+      <%= image_tag @shoe.image.url(:large), :with => 620, :height => 620, :alt => "COLLECTION #{@collection.name} #{@shoe.name}" %>
+    </div>
   </div>
   <div class="span4">
     <h1><%= @shoe.name %></h1>
     <%= simple_format @shoe.detail %>
+    <% unless @shoe.price.nil? %>
+      <br>
+      <p class="lead"><%= number_to_currency @shoe.price %></p>
+      <%= link_to 'BUY', '#form-buy', :class => 'button', :id => 'buttonBuyShoe' %>
+      <div style="display:none">
+        <div id="form-buy">
+          <%= form_tag buy_shoe_url(@shoe), :method => 'post', :remote => true do %>
+            <p>
+              <strong>Not available yet.</strong>
+              <br>
+              Leave your email and we will contact.
+            </p>
+            <p>
+              <input type="email" name="email" class="email" placeholder="Email" required>
+              <input type="submit" class="button small-button" value="SEND">
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <%= content_for :javascript do %>
+        <%= javascript_tag do %>
+          $(function() {
+            $('#buttonBuyShoe').colorbox({
+              inline: true,
+              transition: 'none',
+              onComplete: function() {
+                $('#form-buy .email').focus();
+              }
+            });
+          });
+        <% end %>
+      <% end %>
+    <% end %>
     <hr>
     <p>
       <%= link_to 'VIEW FULL SIZE IMAGE', @shoe.image.url, :target => '_blank' %>
     </p>
   </div>
 </section>
+<%= content_for :javascript do %>
+  <%= javascript_tag do %>
+    $(function() {
+      $('#shoeImage').zoom({url: '<%= @shoe.image.url(:original) %>'});
+    });
+  <% end %>
+<% end %>

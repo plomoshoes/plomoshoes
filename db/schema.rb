@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120917041631) do
+ActiveRecord::Schema.define(:version => 20120925224013) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20120917041631) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "shoes", :force => true do |t|
-    t.string   "name",               :null => false
+    t.string   "name",                                              :null => false
     t.text     "detail"
     t.string   "path"
     t.string   "image_file_name"
@@ -63,8 +63,9 @@ ActiveRecord::Schema.define(:version => 20120917041631) do
     t.datetime "image_updated_at"
     t.boolean  "active"
     t.integer  "collection_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+    t.decimal  "price",              :precision => 10, :scale => 2
   end
 
   add_index "shoes", ["collection_id"], :name => "index_shoes_on_collection_id"
