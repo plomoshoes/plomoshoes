@@ -65,7 +65,10 @@
 <%= content_for :javascript do %>
   <%= javascript_tag do %>
     $(function() {
-      $('#shoeImage').zoom({url: '<%= @shoe.image.url(:original) %>'});
+      $('#shoeImage').zoom({
+        grab: true,
+        url: '<%= @shoe.image.url(:original) %>'
+      });
     });
   <% end %>
 <% end %>

@@ -19,3 +19,6 @@
 }
 
 .zoom img::selection { background-color: transparent; }
+
+.zoom img:hover { cursor: url('plugins/zoom/grab.cur'), default; }
+.zoom img:active { cursor: url('plugins/zoom/grabbed.cur'), default; }
