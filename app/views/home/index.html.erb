@@ -12,7 +12,7 @@
 <section id="mainCarousel" class="carousel">
   <div class="carousel-inner">
     <% @home_main_banners.each_with_index do |banner, index| %>
-      <div class="<%= 'active ' if index.zero? %>item"><%= image_tag banner.image.url(:original), :width => 778, :height => 295, :alt => banner.name %></div>
+      <div class="<%= 'active ' if index.zero? %>item"><%= link_to_if !banner.url.blank?, image_tag(banner.image.url(:original), :width => 778, :height => 295, :alt => banner.name), banner.url %></div>
     <% end %>
   </div>
   <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
