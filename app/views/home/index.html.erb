@@ -11,9 +11,9 @@
 <% end %>
 <section id="mainCarousel" class="carousel">
   <div class="carousel-inner">
-    <div class="active item"><%= image_tag 'home/banner-carousel-01.jpg', :width => 778, :height => 295, :alt => 'Shop online' %></div>
-    <div class="item"><%= image_tag 'home/banner-carousel-02.jpg', :width => 778, :height => 295, :alt => 'Fashion' %></div>
-    <div class="item"><%= image_tag 'home/banner-carousel-03.jpg', :width => 778, :height => 295, :alt => 'Fall 2012' %></div>
+    <% @home_main_banners.each_with_index do |banner, index| %>
+      <div class="<%= 'active ' if index.zero? %>item"><%= image_tag banner.image.url(:original), :width => 778, :height => 295, :alt => banner.name %></div>
+    <% end %>
   </div>
   <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>

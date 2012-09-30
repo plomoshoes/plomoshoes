@@ -20,5 +20,10 @@ FactoryGirl.define do
     description "Tendecias de moda y beleza"
     ordering 0
   end
+  
+  factory :home_main_banner do
+    name "Banner A"
+    ordering 0
+  end
 
 end
