@@ -82,8 +82,8 @@ end
 Paperclip::Attachment.default_options.merge!({
   :storage => :s3,
   :s3_protocol => 'http',
-  :s3_host_name => "s3-sa-east-1.amazonaws.com",
-  :bucket => "plomoshoes",
+  :s3_host_name => "s3.amazonaws.com",
+  :bucket => "plomoshoes_website",
   :s3_credentials => {
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
