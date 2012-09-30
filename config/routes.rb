@@ -11,6 +11,7 @@ Plomoshoes::Application.routes.draw do
   
   # collections
   get 'collections/:path' => 'collections#show', :as => 'collection'
+  get 'collections' => 'collections#index', :as => 'collections'
   
   # shoes
   get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'

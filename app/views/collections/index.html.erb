@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <% page_title = "All collections | Plomo Shoes" %>
+	<% page_description = "Check out the all collections." %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="collections, all collections">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= asset_url('plomoshoes-logo.png') %>">
+  <meta property="og:url" content="<%= collections_url %>">
+<% end %>
+<h1>ALL COLLECTIONS</h1>
+<ul>
+  <% @collections.each do |collection| %>
+    <li>
+      <%= link_to "COLLECTION #{collection.name}", collection_url(collection.path) %>
+    </li>
+  <% end %>
+</ul>

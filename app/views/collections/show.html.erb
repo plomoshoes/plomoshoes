@@ -6,9 +6,10 @@
 	<meta name="description" content="<%= page_description %>">
 	<meta property="og:title" content="<%= page_title %>">
   <meta property="og:description" content="<%= page_description %>">
-  <meta property="og:image" content="<%= asset_path('plomoshoes-logo.png') %>">
+  <meta property="og:image" content="<%= asset_url('plomoshoes-logo.png') %>">
   <meta property="og:url" content="<%= collection_url(@collection.path) %>">
 <% end %>
+<p><%= link_to 'VIEW ALL', collections_path %></p>
 <h1>COLLECTION <%= @collection.name %></h1>
 <div class="collection">
   <% @collection.shoes.each_with_index do |shoe, index| %>

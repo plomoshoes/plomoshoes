@@ -21,4 +21,16 @@ describe Collection do
     collection.should eql collection_current
     collection.should_not eql collection_non_current
   end
+  
+  it 'should be by default return collections in month and year desc ordering' do
+    collection_03_2012 = FactoryGirl.create :collection, :month => 3, :year => 2012
+    collection_12_2011 = FactoryGirl.create :collection, :month => 12, :year => 2011
+    collection_09_2012 = FactoryGirl.create :collection, :month => 9, :year => 2012
+    
+    collections = Collection.all
+    
+    collections[0].should eql collection_09_2012
+    collections[1].should eql collection_03_2012
+    collections[2].should eql collection_12_2011
+  end
 end
