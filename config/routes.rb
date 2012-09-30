@@ -16,8 +16,8 @@ Plomoshoes::Application.routes.draw do
   get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'
   post 'shoes/:id/buy' => 'shoes#buy', :as => 'buy_shoe'
   
-  # retailers
-  get 'retailers' => 'retailers#index', :as => 'retailers'
+  # store_locator
+  get 'store-locator' => 'store_locator#index', :as => 'store_locator'
   
   # subscribe newsletter
   post 'subscribe' => 'application#subscribe', :as => :subscribe
