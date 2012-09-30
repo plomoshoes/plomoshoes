@@ -19,9 +19,9 @@
   <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>
 </section>
 <section class="row-fluid">
-  <div class="span4"><%= image_tag 'home/banner-thumb-01.jpg', :width => 249, :height => 120 %></div>
-  <div class="span4"><%= image_tag 'home/banner-thumb-02.jpg', :width => 249, :height => 120 %></div>
-  <div class="span4"><%= image_tag 'home/banner-thumb-03.jpg', :width => 249, :height => 120 %></div>
+  <% @home_thumb_banners.each do |banner| %>
+    <div class="span4"><%= link_to_if !banner.url.blank?, image_tag(banner.image.url(:original), :width => 248, :height => 120, :alt => banner.name), banner.url %></div>
+  <% end %>
 </section>
 <% content_for :javascript do %>
   <%= javascript_tag do %>

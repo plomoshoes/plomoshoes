@@ -25,5 +25,10 @@ FactoryGirl.define do
     name "Banner A"
     ordering 0
   end
+  
+  factory :home_thumb_banner do
+    name "Thumb banner A"
+    ordering 0
+  end
 
 end

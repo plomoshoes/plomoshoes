@@ -1,4 +1,4 @@
-class HomeMainBanner < ActiveRecord::Base
+class HomeThumbBanner < ActiveRecord::Base
   attr_accessible :name, :ordering, :url, :image, :delete_image
   attr_accessor :delete_image
   before_validation { self.image.clear if self.delete_image == '1' }
@@ -9,7 +9,7 @@ class HomeMainBanner < ActiveRecord::Base
     :content_type => ['image/pjpeg', 'image/jpg', 'image/jpeg', 'image/gif', 'image/png', 'image/x-png'],
                      :message => "Imagem dever ser jpeg, gif ou png"
       
-  has_attached_file :image, :styles => { :original => ["778x295", :png] }
+  has_attached_file :image, :styles => { :original => ["248x120", :png] }
   
   default_scope order('ordering desc')
 end
