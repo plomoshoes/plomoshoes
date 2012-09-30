@@ -1,0 +1,25 @@
+<% content_for :head do %>
+  <% page_title = "Press | Plomo Shoes" %>
+	<% page_description = "Check out where we are in the press." %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="press">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= asset_path('plomoshoes-logo.png') %>">
+  <meta property="og:url" content="<%= lookbook_url %>">
+<% end %>
+<h1>PRESS</h1>
+<div class="row-fluid press-items">
+  <% @press_items.each do |press_item| %>
+    <section class="span6">
+      <div class="image">
+        <%= image_tag press_item.image.url(:original), :width => 150, :height => 180, :alt => press_item.name %>
+      </div>
+      <div class="description">
+        <h3><%= press_item.name %></h3>
+        <%= simple_format press_item.description %>
+      </div>
+    </section>
+  <% end %>
+</div>

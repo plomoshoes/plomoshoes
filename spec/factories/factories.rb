@@ -14,5 +14,11 @@ FactoryGirl.define do
     active true
     association :collection, factory: :collection
   end
+  
+  factory :press_item do
+    name "Amor en primera fila"
+    description "Tendecias de moda y beleza"
+    ordering 0
+  end
 
 end

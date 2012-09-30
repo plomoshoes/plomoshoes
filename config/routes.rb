@@ -16,6 +16,9 @@ Plomoshoes::Application.routes.draw do
   get 'collections/:collection_path/:path' => 'shoes#show', :as => 'shoe'
   post 'shoes/:id/buy' => 'shoes#buy', :as => 'buy_shoe'
   
+  # press
+  get 'press' => 'press#index', :as => 'press'
+  
   # lookbook
   get 'lookbook' => 'lookbook#index', :as => 'lookbook'
   
