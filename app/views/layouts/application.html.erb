@@ -31,7 +31,7 @@
             <%= content_tag :li, link_to('ABOUT', about_url), :class => selected_menu_class(['about']) %>
             <%= content_tag :li, link_to(current_collection.name, collection_url(current_collection.path)), :class => selected_menu_class(['collections', 'shoes']) unless current_collection.nil? %>
             <li><%= link_to 'PRESS', 'javascript:void(0)' %></li>
-            <li><%= link_to 'LOOKBOOK', 'javascript:void(0)' %></li>
+            <%= content_tag :li, link_to('LOOKBOOK', lookbook_url), :class => selected_menu_class(['lookbook']) %>
           </ul>
         </nav>
       </header>

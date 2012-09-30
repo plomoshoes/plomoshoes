@@ -1,0 +1,20 @@
+<% content_for :head do %>
+  <% page_title = "Lookbook | Plomo Shoes" %>
+	<% page_description = "Check out our lookbook." %>
+	<title><%= page_title %></title>
+	<meta name="keywords" content="lookbook">
+	<meta name="description" content="<%= page_description %>">
+	<meta property="og:title" content="<%= page_title %>">
+  <meta property="og:description" content="<%= page_description %>">
+  <meta property="og:image" content="<%= asset_path('plomoshoes-logo.png') %>">
+  <meta property="og:url" content="<%= lookbook_url %>">
+<% end %>
+<h1>LOOKBOOK</h1>
+<div class="lookbook">
+  <%= image_tag 'lookbook.jpg', :width => 940, :height => 400, :alt => 'Lookbook' %>
+  <div class="btn-box">
+    <%= link_to 'files/lookbook.pdf', :title => 'Click to download', :class => 'button invert-button' do %>
+      Click to <strong>download</strong> in PDF
+    <% end %>
+  </div>
+</div>

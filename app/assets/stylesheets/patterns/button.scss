@@ -8,6 +8,11 @@
 	@include border-radius(2px);
 }
 
+.invert-button {
+	color: #333;
+	background-color: #FFF;	
+}
+
 .small-button {
 	font-size: 0.8em;
 }

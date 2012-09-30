@@ -1,0 +1,17 @@
+.lookbook {
+	position: relative;
+}
+
+.lookbook .btn-box {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 40px;
+	background: #EEE;
+	background: rgba(255, 255, 255, 0.4);
+	@include border-radius(3px);
+}
+
+.lookbook .btn-box .button {
+	border: 2px solid #333;
+}
