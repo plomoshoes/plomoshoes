@@ -9,11 +9,11 @@
         <div id="newsAsideContent"></div>
         <script id="newsAsideContentTemplate" type="text/x-jquery-tmpl">
           <article>
-            <time datetime="${publishedDate}" pubdate><a href="${link}" target="_blank">${plomo.formatFeedDate(publishedDate)}</a></time>
-            <h2><a href="${link}" target="_blank">${title}</a></h2>
+            <time datetime="${publishedDate}" pubdate><a href="${link}">${plomo.formatFeedDate(publishedDate)}</a></time>
+            <h2><a href="${link}">${title}</a></h2>
           </article>
         </script>
-        <%= link_to 'VIEW ALL NEWS', 'http://plomoshoes.wordpress.com', :target => '_blank', :class => 'view-all' %>
+        <%= link_to 'VIEW ALL NEWS', 'http://plomoshoes.wordpress.com', :class => 'view-all' %>
       </aside>
     </div>
   </div>
