@@ -58,8 +58,8 @@ Plomoshoes::Application.configure do
     :address => "smtpout.secureserver.net",
     :port => 80,
     :domain => 'www.plomoshoes.com',
-    :user_name => 'corp@plomoshoes.com',
-    :password => 'worlddomination',
+    :user_name => ENV['MAILER_USERNAME'],
+    :password => ENV['MAILER_PASSWORD'],
     :authentication => :login
   }
   config.action_mailer.raise_delivery_errors = true
