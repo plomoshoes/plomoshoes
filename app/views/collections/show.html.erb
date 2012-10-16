@@ -12,7 +12,7 @@
 <p><%= link_to 'VIEW ALL', collections_path %></p>
 <h1>COLLECTION <%= @collection.name %></h1>
 <div class="collection">
-  <% @collection.shoes.each_with_index do |shoe, index| %>
+  <% @shoes.each_with_index do |shoe, index| %>
     <section class="item">
       <%= link_to image_tag(shoe.image.url(:medium), :width => 230, :height => 230, :alt => shoe.name), shoe_url(shoe.collection_path, shoe.path) %>
       <div class="popover">

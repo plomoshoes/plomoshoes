@@ -5,7 +5,7 @@ describe Collection do
     collection_active = FactoryGirl.create :collection, :active => true
     collection_non_active = FactoryGirl.create :collection, :active => false
     
-    collections = Collection.all
+    collections = Collection.active.all
     
     collections.should have(1).record
     collections.should include collection_active

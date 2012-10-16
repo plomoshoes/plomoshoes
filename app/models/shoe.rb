@@ -1,7 +1,7 @@
 class Shoe < ActiveRecord::Base
   belongs_to :collection
   
-  attr_accessible :detail, :name, :path, :price, :image, :delete_image, :ordering, :active, :collection_id
+  attr_accessible :detail, :name, :path, :price, :image, :delete_image, :ordering, :active, :collection_id, :sold_out
   attr_accessor :delete_image
   before_validation { self.image.clear if self.delete_image == '1' }
   
@@ -13,7 +13,11 @@ class Shoe < ActiveRecord::Base
       
   has_attached_file :image, :styles => { :medium => ["230x230!", :png], :large => ["620x620>", :png] }
   
-  default_scope where(:active => true).order('ordering desc, name asc')
+  default_scope order('ordering desc, name asc')
+  
+  def self.by_collection(collection)
+    where(:collection_id => collection.id, :active => true)
+  end
   
   delegate :path, :to => :collection, :prefix => true
 end

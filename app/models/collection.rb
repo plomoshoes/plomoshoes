@@ -5,7 +5,9 @@ class Collection < ActiveRecord::Base
   
   validates_presence_of :name
   
-  default_scope where(:active => true).order('year desc, month desc')
+  default_scope order('year desc, month desc')
+  
+  scope :active, where(:active => true)
   
   def self.current
     where(:current => true).first
