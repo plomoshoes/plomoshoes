@@ -14,15 +14,16 @@
   <div class="span8 pull-left">
     <div id="shoeImage" class="zoom">
       <span class="zoomIcon"></span>
-      <% if @shoe.sold_out? %>
-        <span class="sold-out-icon"></span>
-      <% end %>
       <%= image_tag @shoe.image.url(:large), :with => 620, :height => 620, :alt => "COLLECTION #{@collection.name} #{@shoe.name}" %>
     </div>
   </div>
   <div class="span4">
     <h1><%= @shoe.name %></h1>
     <%= simple_format @shoe.detail %>
+    <% if @shoe.sold_out? %>
+      <br>
+      <span class="sold-out-icon"></span>
+    <% end %>
     <% if display_buy_button? %>
       <br>
       <p class="lead"><%= number_to_currency @shoe.price %></p>
