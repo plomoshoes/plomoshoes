@@ -14,12 +14,22 @@
   <% @press_items.each do |press_item| %>
     <section class="span6">
       <div class="image">
-        <%= image_tag press_item.image.url(:original), :width => 150, :height => 180, :alt => press_item.name %>
+        <%= link_to_if press_item.internal_image.exists?, image_tag(press_item.image.url, :width => 150, :height => 180, :alt => press_item.name), press_item.internal_image.url, :class => 'linkPressImage' %>
       </div>
       <div class="description">
         <h3><%= press_item.name %></h3>
         <%= simple_format press_item.description %>
+        <% if press_item.internal_image.exists? %>
+          <p><%= link_to 'View press', press_item.internal_image.url, :class => 'linkPressImage' %></p>
+        <% end %>
       </div>
     </section>
   <% end %>
 </div>
+<%= content_for :javascript do %>
+  <%= javascript_tag do %>
+    $(function() {
+      $('.linkPressImage').colorbox({transition:'none'});
+    });
+  <% end %>
+<% end %>
