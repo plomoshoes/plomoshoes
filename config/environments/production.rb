@@ -52,12 +52,12 @@ Plomoshoes::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   
   # ActionMailer
-  config.action_mailer.default_url_options = { :host => 'http://plomoshoes.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://www.plomony.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "smtpout.secureserver.net",
     :port => 80,
-    :domain => 'www.plomoshoes.com',
+    :domain => 'www.plomony.com',
     :user_name => ENV['MAILER_USERNAME'],
     :password => ENV['MAILER_PASSWORD'],
     :authentication => :login

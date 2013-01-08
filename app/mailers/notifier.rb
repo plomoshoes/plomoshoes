@@ -1,11 +1,11 @@
 class Notifier < ActionMailer::Base
   
-  default :from => 'website@plomoshoes.com'
+  default :from => 'website@plomony.com'
   
   def buy_notification(shoe, email)
     @shoe = shoe
     @email = email
-    mail :to => 'info@plomoshoes.com', :subject => "[website] Buy notification of #{@email}"
+    mail :to => 'info@plomony.com', :subject => "[website] Buy notification of #{@email}"
   end
   
 end
