@@ -18,4 +18,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  protected
+  
+  def redirect_to_ecommerce
+    redirect_to 'https://plomoshoes.myshopify.com'
+  end
+  
 end
